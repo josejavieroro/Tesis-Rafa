@@ -58,3 +58,8 @@ class EstudianteListView(ListView):
 class EstudainteCreateView(CreateView):
     model = Estudiante
     template_name = "estudiante/crear.html"
+
+
+class ProfesorCreateView(CreateView):
+    model = Profesor
+    template_name = "profesor/crear.html"
