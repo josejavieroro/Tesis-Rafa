@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="form-control jumbotron">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="alert alert-danger">
+            <strong>Cuidado!</strong> Esta seguro que quiere borrar la facultad {{ facultad.nombre }}
+        </div>
+
+        <button class="btn btn-danger" type="submit" value="Confirm">Si    </button>
+    </form>
+    <a
+                href="{% url 'facultad_lista' %}" class="btn btn-primary btn-dark" type="submit"
+                value="Save">Cancelar</a>
+
+</div>
+{% endblock %}

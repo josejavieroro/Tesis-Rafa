@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+{% load widget_tweaks %}
+
+<link rel="stylesheet" href="{% static 'formularios/bootstrap.min.css' %}"/>
+<link rel="stylesheet" href="{% static 'formularios/font-awesome.css' %}"/>
+<link rel="stylesheet" href="{% static 'formularios/probando tablas.css' %}"/>
+
+
+   <style>
+        body {
+            background-color: darkseagreen;
+        }
+    </style>
+
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+            <div class="card">
+                <h5 class="text-center mb-4">Actualizar Facultad</h5>
+                <form class="form-card" method="POST" action="">
+                    {% csrf_token %}
+
+                    {% if form.errors %}
+                        <di class="">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                            <h5>
+                                Ha ocurrido un error</h5>
+                        <hl>
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                        </hl>
+                        </di>
+                    {% endif %}
+                    <div class="row justify-content-between text-left">
+                          <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nombre de la Facultad<span class="text-danger"> *</span></label>{% render_field form.nombre type="text" id="fname" name="fname" placeholder="Incerte el nombre" autocomplete="off" %} </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                      <div class="form-group col-sm-6 flex-column d-flex"><button type="submit" value="Save" class="btn-block btn-primary">Añadir</button></div>
+                    <div class="form-group col-sm-6 flex-column d-flex"><a href="{% url 'facultad_lista' %}" class="btn btn-block btn-primary">Cancelar</a></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script rel="stylesheet" href="{% static 'formularios/jquery.min.js' %}"></script>>
+<script rel="stylesheet" href="{% static 'formularios/bootstrap.bundle.min.js' %}"></script>>
+<script rel="stylesheet" href="{% static 'formularios/probando tablas.js' %}"></script>>
+
+
+
+{% endblock %}

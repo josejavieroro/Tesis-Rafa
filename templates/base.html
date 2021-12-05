@@ -1,0 +1,125 @@
+{% load static %}
+
+
+  <link rel="stylesheet" href="{% static 'base/css/bootstrap.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/owl.carousel.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/magnific-popup.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/font-awesome.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/slicknav.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/themify-icons.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/nice-select.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/flaticon.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/gijgo.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/animate.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/slick.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/style.css' %}"/>
+
+
+
+  {% block header %}
+       <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo">
+                                <a href="">
+                                     <h2>OTN</h2>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a class="active" href="">home</a></li>
+                                         <li><a>Gestion</a>
+                                            <ul class="submenu">
+                                                   <li><a href="">Municipios</a></li>
+                                                   <li><a href="">Provincias</a></li>
+                                                   <li><a href="">Organismos</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a>Comercial</a>
+                                            <ul class="submenu">
+                                                   <li><a href="">Contratos</a></li>
+                                                   <li><a href="">Empresas</a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li><a>Recepcion</a>
+                                            <ul class="submenu">
+                                                   <li><a href="">Ordenes</a></li>
+                                                   <li><a href="">Instrumentos</a></li>
+
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+                            <div class="social_wrap d-flex align-items-center justify-content-end">
+                               {% if user.is_authenticated %}
+                                     <div class="login_text">
+                                    <a href="">Logout</a>
+                                         <a>{{ user.username }}</a>
+                                </div>
+                                 {% else %}
+                                      <div class="login_text">
+                                    <a href="">Login</a>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+   <style>
+        body {
+            background-color: darkseagreen;
+        }
+    </style>
+    {% endblock %}
+
+
+    {% block content %}
+   <style>
+        body {
+            background-color: darkseagreen;
+        }
+    </style>
+    {% endblock %}
+ <script src="/static/base/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="/static/base/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/static/base/js/popper.min.js"></script>
+    <script src="/static/base/js/bootstrap.min.js"></script>
+    <script src="/static/base/js/owl.carousel.min.js"></script>
+    <script src="/static/base/js/isotope.pkgd.min.js"></script>
+    <script src="/static/base/js/ajax-form.js"></script>
+    <script src="/static/base/js/waypoints.min.js"></script>
+    <script src="/static/base/js/jquery.counterup.min.js"></script>
+    <script src="/static/base/js/imagesloaded.pkgd.min.js"></script>
+    <script src="/static/base/js/scrollIt.js"></script>
+    <script src="/static/base/js/jquery.scrollUp.min.js"></script>
+    <script src="/static/base/js/wow.min.js"></script>
+    <script src="/static/base/js/nice-select.min.js"></script>
+    <script src="/static/base/js/jquery.slicknav.min.js"></script>
+    <script src="/static/base/js/jquery.magnific-popup.min.js"></script>
+    <script src="/static/base/js/plugins.js"></script>
+    <script src="/static/base/js/gijgo.min.js"></script>
+    <script src="/static/base/js/slick.min.js"></script>
+    <script src="/static/base/js/contact.js"></script>
+    <script src="/static/base/js/jquery.ajaxchimp.min.js"></script>
+    <script src="/static/base/js/jquery.form.js"></script>
+    <script src="/static/base/js/jquery.validate.min.js"></script>
+    <script src="/static/base/js/mail-script.js"></script>
+    <script src="/static/base/js/main.js"></script>
+

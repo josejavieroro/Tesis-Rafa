@@ -1,0 +1,158 @@
+{% load static %}
+
+ <link rel="stylesheet" href="{% static 'base/css/bootstrap.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/owl.carousel.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/magnific-popup.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/font-awesome.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/slicknav.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/themify-icons.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/nice-select.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/flaticon.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/gijgo.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/animate.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/slick.css' %}"/>
+  <link rel="stylesheet" href="{% static 'base/css/style.css' %}"/>
+  <link rel="stylesheet" href="{% static 'tables/table/datatable.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'tables/table/responsive.datatable.min.js' %}"/>
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo">
+                                <a href="">
+                                     <h2>OTN</h2>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a class="active" href="">home</a></li>
+                                         <li><a>Gestion</a>
+                                            <ul class="submenu">
+                                                   <li><a href="">Municipios</a></li>
+                                                   <li><a href="">Provincias</a></li>
+                                                   <li><a href="">Organismos</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a>Comercial</a>
+                                            <ul class="submenu">
+                                                   <li><a href="">Contratos</a></li>
+                                                   <li><a href="">Empresas</a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li><a>Recepcion</a>
+                                            <ul class="submenu">
+                                                   <li><a href="">Ordenes</a></li>
+                                                   <li><a href="">Instrumentos</a></li>
+
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+                            <div class="social_wrap d-flex align-items-center justify-content-end">
+                               {% if user.is_authenticated %}
+                                     <div class="login_text">
+                                    <a href="">Logout</a>
+                                         <a>{{ user.username }}</a>
+                                </div>
+                                 {% else %}
+                                      <div class="login_text">
+                                    <a href="">Login</a>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+   <style>
+        body {
+            background-color: darkseagreen;
+        }
+    </style>
+{% block content %}
+    <div class="container mt-4">
+        <div class="card" style="box-shadow: 0 0 10px 5px darkslategray;">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3 class="text-muted">Gestionar <strong>Facultad</strong></h3>
+                    </div>
+                    <div class="col-md-4 text-right">
+
+                    </div>
+                </div>
+
+            </div>
+    <div class="card-body">
+                <div class="container">
+    <table id="example" class="table table-bordered display nowrap" cellspacing="0" style="width: 100%; border: none">
+    <thead>
+      <tr>
+        <th>
+            <h6 class="">Nombre</h6>
+        </th>
+
+
+        <th>
+            <h6 class="text-muted">Opciones</h6>
+        </th>
+      </tr>
+    </thead>
+
+          {% for contrato in object_list %}
+
+                  <tr>
+        <td><span class="badge badge-light">{{ contrato.nombre }}</span></td>
+
+        <td>
+            <div class="row text-right ">
+
+                          <a href="{% url 'facultad_actualizar' contrato.id %}" class="btn btn-secondary">
+            Actualizar
+        </a>
+        <a href="{% url 'facultad_eliminar' contrato.id %}" class="btn btn-danger">
+            Eliminar
+        </a>
+
+
+            </div>
+            </td>
+            </tr>
+          {% endfor %}
+  </table>
+      </div>
+    </div>
+<!-- partial -->
+<script src="/static/datatables_export_excel/jquery.min.js"></script>
+<script src="/static/datatables_export_excel/jquery.dataTables.min.js"></script>
+<script src="/static/datatables_export_excel/dataTables.buttons.min.js"></script>
+<script src="/static/datatables_export_excel/dataTables.bootstrap.min.js"></script>
+<script src="/static/datatables_export_excel/jszip.min.js"></script>
+<script src="/static/datatables_export_excel/buttons.html5.min.js"></script>
+<script src="/static/tables/table/datatable.min.js"></script>
+<script src="/static/tables/table/responsive.datatable.min.js"></script>
+
+ <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+
+{% endblock %}
