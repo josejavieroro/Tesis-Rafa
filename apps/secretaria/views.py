@@ -58,3 +58,10 @@ class EstudianteListView(ListView):
 class EstudainteCreateView(CreateView):
     model = Estudiante
     template_name = "estudiante/crear.html"
+
+class EstudianteDeleteView(DeleteView):
+    model = Estudiante
+    template_name = "estudiante/eliminar.html"
+class EstudianteDetailView(DetailView):
+    model = Estudiante
+    template_name = "estudiante/detalles.html"
