@@ -44,3 +44,17 @@ class FacultadEditView(UpdateView):
 
 
 #para las demas clases del modelo es lo mismo
+
+
+class MiTemplate(TemplateView):
+    template_name = "emrpesa/crear.html"
+
+
+class EstudianteListView(ListView):
+    model = Estudiante
+    template_name = "estudiante/listar.html"
+
+
+class EstudainteCreateView(CreateView):
+    model = Estudiante
+    template_name = "estudiante/crear.html"
